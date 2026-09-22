@@ -83,7 +83,7 @@
 #heroImg {
   height: 300px;
   width: 400px;
-  background-image: url(/assests/hero-image.jpg);
+  background-image: url(/assets/hero-image.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -237,7 +237,7 @@
 #prjImg {
   height: 300px;
   width: 400px;
-  background-image: url(/assests/hero-image.jpg);
+  background-image: url(/assets/hero-image.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
