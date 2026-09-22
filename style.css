@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arimo";
+}
+
+#navbar {
+  height: 50px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+
+#navRightSide {
+  height: inherit;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-left: 70px;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+#links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+#links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+#links a:nth-child(2) i {
+  font-size: 6px;
+  transform: translateY(-3px);
+}
+
+#navLeftSide {
+  margin-right: 70px;
+}
+
+#navLeftSide button {
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 10px;
+  border: 0;
+}
+
+#heroSection {
+  height: 750px;
+}
+
+#heroTopSide {
+  height: 425px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#electronicFAQ {
+  height: min-content;
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 30px 30px 0px 0px #67bdb0;
+}
+
+#heroImg {
+  height: 300px;
+  width: 400px;
+  background-image: url(/assests/hero-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#heroDescription {
+  height: 300px;
+  width: 400px;
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+#heroDescription p {
+  font-weight: lighter;
+  color: grey;
+}
+
+#heroDescription button {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 10px;
+  border: 0;
+}
+
+#heroBottomSide {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#trendingSec {
+  height: min-content;
+  width: 800px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+#para {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+#para p {
+  font-size: x-small;
+  text-align: center;
+}
+
+#viewMore {
+  display: flex;
+  align-items: center;
+}
+
+#viewMore button {
+  background: #67bdb0;
+  color: #fff;
+  padding: 10px 30px;
+  font-weight: 600;
+  font-size: 10px;
+  border: 0;
+}
+
+#toolsAndAccessories {
+  height: 410px;
+  background: linear-gradient(45deg, #ffffff 0%, #c5c0ba 88%);
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0 20px 0;
+  margin-bottom: 20px;
+}
+
+#taaLeftSide {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#taaLeftSide h1 {
+  width: 200px;
+}
+
+#taaRightSide {
+  height: max-content;
+  width: max-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tools {
+  height: 110px;
+  width: 150px;
+  background-color: #67bdb0;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tools p {
+  font-size: small;
+}
+
+#projects {
+  display: flex;
+  justify-content: center;
+}
+
+#prjLeftSide {
+  width: 300px;
+  background-color: #67bdb0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+#prjLeftSide p {
+  font-size: 20px;
+}
+
+#prjLeftSide button {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 10px;
+  border: 0;
+}
+
+#prjRightSide {
+  width: 400px;
+}
+
+#prjImg {
+  height: 300px;
+  width: 400px;
+  background-image: url(/assests/hero-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#prjDescription {
+  text-align: center;
+}
