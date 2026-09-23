@@ -2,11 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arimo";
+  font-family: "Arimo", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 #navbar {
-  height: 50px;
+  min-height: 50px;
   width: 100%;
   background-color: #000;
   color: #fff;
@@ -14,20 +18,24 @@
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 5%;
 }
 
 #navRightSide {
-  height: inherit;
+  min-height: 50px;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
   gap: 30px;
-  margin-left: 70px;
 }
 
 #logo {
   display: flex;
   align-items: center;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 #links {
@@ -41,6 +49,7 @@
   text-decoration: none;
   font-size: 10px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 #links a:nth-child(2) i {
@@ -48,41 +57,52 @@
   transform: translateY(-3px);
 }
 
-#navLeftSide {
-  margin-right: 70px;
-}
-
 #navLeftSide button {
   padding: 10px 20px;
   font-weight: 600;
   font-size: 10px;
   border: 0;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#menuButton {
+  display: none;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+#mobileQuestionButton {
+  display: none;
 }
 
 #heroSection {
-  height: 750px;
+  min-height: 750px;
+  padding-top: 50px;
 }
 
 #heroTopSide {
-  height: 425px;
-  padding-top: 50px;
+  min-height: 425px;
+  padding: 50px 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #electronicFAQ {
-  height: min-content;
-  width: min-content;
+  width: min(800px, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 30px 30px 0px 0px #67bdb0;
+  box-shadow: 30px 30px 0 #67bdb0;
 }
 
 #heroImg {
   height: 300px;
-  width: 400px;
+  width: 50%;
   background-image: url(/assets/hero-image.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -91,9 +111,9 @@
 
 #heroDescription {
   height: 300px;
-  width: 400px;
+  width: 50%;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background-color: #fff;
   display: flex;
   justify-content: space-around;
@@ -101,9 +121,15 @@
   flex-direction: column;
 }
 
+#heroDescription h1 {
+  font-size: 32px;
+}
+
 #heroDescription p {
   font-weight: lighter;
   color: grey;
+  line-height: 1.5;
+  max-width: 350px;
 }
 
 #heroDescription button {
@@ -113,41 +139,50 @@
   font-weight: 600;
   font-size: 10px;
   border: 0;
+  cursor: pointer;
 }
 
 #heroBottomSide {
-  padding-top: 100px;
+  padding: 100px 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #trendingSec {
-  height: min-content;
-  width: 800px;
+  width: min(800px, 100%);
   background: #000;
   color: #fff;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  gap: 30px;
   padding: 50px;
 }
 
 #para {
   width: 400px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 }
 
+#para h1 {
+  text-align: center;
+}
+
 #para p {
   font-size: x-small;
   text-align: center;
+  line-height: 1.5;
 }
 
 #viewMore {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #viewMore button {
@@ -157,33 +192,41 @@
   font-weight: 600;
   font-size: 10px;
   border: 0;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 #toolsAndAccessories {
-  height: 410px;
+  min-height: 410px;
   background: linear-gradient(45deg, #ffffff 0%, #c5c0ba 88%);
   display: flex;
-  justify-content: space-around;
-  padding: 40px 0 20px 0;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 40px 20px 20px;
   margin-bottom: 20px;
 }
 
 #taaLeftSide {
   width: 300px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 #taaLeftSide h1 {
-  width: 200px;
+  max-width: 200px;
+}
+
+#taaLeftSide p {
+  line-height: 1.5;
 }
 
 #taaRightSide {
-  height: max-content;
-  width: max-content;
+  width: 310px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 150px);
   gap: 10px;
 }
 
@@ -191,10 +234,14 @@
   height: 110px;
   width: 150px;
   background-color: #67bdb0;
-  padding: 10px 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.tools h2 {
+  font-size: 20px;
 }
 
 .tools p {
@@ -202,12 +249,15 @@
 }
 
 #projects {
+  width: min(700px, 100%);
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  padding: 0 20px;
 }
 
 #prjLeftSide {
-  width: 300px;
+  width: 43%;
+  min-height: 350px;
   background-color: #67bdb0;
   display: flex;
   flex-direction: column;
@@ -215,10 +265,12 @@
   align-items: center;
   text-align: center;
   gap: 10px;
+  padding: 30px 20px;
 }
 
 #prjLeftSide p {
   font-size: 20px;
+  line-height: 1.3;
 }
 
 #prjLeftSide button {
@@ -228,15 +280,16 @@
   font-weight: 600;
   font-size: 10px;
   border: 0;
+  cursor: pointer;
 }
 
 #prjRightSide {
-  width: 400px;
+  width: 57%;
 }
 
 #prjImg {
   height: 300px;
-  width: 400px;
+  width: 100%;
   background-image: url(/assets/hero-image.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -245,4 +298,331 @@
 
 #prjDescription {
   text-align: center;
+  padding: 15px;
+}
+
+#prjDescription p {
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  #navbar {
+    padding: 0 30px;
+  }
+
+  #navRightSide {
+    gap: 20px;
+  }
+
+  #links {
+    gap: 20px;
+  }
+
+  #navLeftSide button {
+    padding: 9px 14px;
+  }
+
+  #toolsAndAccessories {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  #navRightSide {
+    width: auto;
+    min-height: 60px;
+  }
+
+  #links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  #links.active {
+    display: flex;
+  }
+
+  #links a {
+    padding: 15px 25px;
+    font-size: 11px;
+  }
+
+  #links a:hover {
+    background-color: #67bdb0;
+  }
+
+  #navLeftSide {
+    display: none;
+  }
+
+  #mobileQuestionButton {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    padding: 12px;
+    background-color: #67bdb0;
+    color: #fff;
+    border: 0;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #menuButton {
+    display: block;
+  }
+
+  #heroSection {
+    min-height: auto;
+  }
+
+  #heroTopSide {
+    padding-top: 70px;
+  }
+
+  #electronicFAQ {
+    box-shadow: 20px 20px 0 #67bdb0;
+  }
+
+  #heroImg,
+  #heroDescription {
+    height: 280px;
+  }
+
+  #heroDescription h1 {
+    font-size: 28px;
+  }
+
+  #heroBottomSide {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  #trendingSec {
+    padding: 35px 25px;
+  }
+
+  #toolsAndAccessories {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  #projects {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  #navbar {
+    position: fixed;
+  }
+
+  #heroTopSide {
+    padding: 90px 20px 0;
+  }
+
+  #electronicFAQ {
+    flex-direction: column;
+    width: min(400px, 90%);
+    box-shadow: 15px 15px 0 #67bdb0;
+  }
+
+  #heroImg {
+    width: 100%;
+    height: 230px;
+  }
+
+  #heroDescription {
+    width: 100%;
+    height: 270px;
+  }
+
+  #heroDescription h1 {
+    font-size: 26px;
+  }
+
+  #heroDescription p {
+    font-size: 14px;
+  }
+
+  #heroBottomSide {
+    padding: 70px 20px 50px;
+  }
+
+  #trendingSec {
+    flex-direction: column;
+    padding: 35px 20px;
+  }
+
+  #para {
+    width: 100%;
+    gap: 25px;
+  }
+
+  #para h1 {
+    font-size: 26px;
+  }
+
+  #para p {
+    font-size: 12px;
+  }
+
+  #toolsAndAccessories {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  #taaLeftSide {
+    width: min(400px, 100%);
+    text-align: center;
+    align-items: center;
+  }
+
+  #taaLeftSide h1 {
+    max-width: 100%;
+    font-size: 28px;
+  }
+
+  #taaRightSide {
+    width: 100%;
+    max-width: 310px;
+  }
+
+  #projects {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #prjLeftSide,
+  #prjRightSide {
+    width: 100%;
+  }
+
+  #prjLeftSide {
+    min-height: 250px;
+  }
+
+  #prjImg {
+    height: 250px;
+  }
+}
+
+@media (max-width: 430px) {
+  #navbar {
+    min-height: 60px;
+    padding: 0 15px;
+  }
+
+  #links a {
+    font-size: 10px;
+  }
+
+  #heroTopSide {
+    padding-top: 90px;
+  }
+
+  #electronicFAQ {
+    width: 92%;
+  }
+
+  #heroImg {
+    height: 200px;
+  }
+
+  #heroDescription {
+    height: 280px;
+    padding: 20px 15px;
+  }
+
+  #heroDescription h1 {
+    font-size: 24px;
+  }
+
+  #heroDescription p {
+    font-size: 13px;
+  }
+
+  #heroBottomSide {
+    padding-top: 60px;
+  }
+
+  #trendingSec {
+    width: 100%;
+    padding: 30px 15px;
+  }
+
+  #para h1 {
+    font-size: 22px;
+  }
+
+  #para p {
+    font-size: 11px;
+  }
+
+  #toolsAndAccessories {
+    padding: 35px 15px;
+  }
+
+  #taaLeftSide h1 {
+    font-size: 24px;
+  }
+
+  #taaRightSide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 300px;
+  }
+
+  .tools {
+    width: 100%;
+    height: 105px;
+  }
+
+  .tools h2 {
+    font-size: 17px;
+  }
+
+  #prjLeftSide h1 {
+    font-size: 36px;
+  }
+
+  #prjLeftSide p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 330px) {
+  #links a {
+    font-size: 9px;
+  }
+
+  #heroDescription h1 {
+    font-size: 21px;
+  }
+
+  #heroDescription p {
+    font-size: 12px;
+  }
+
+  #taaRightSide {
+    gap: 7px;
+  }
+
+  .tools {
+    height: 100px;
+  }
 }
