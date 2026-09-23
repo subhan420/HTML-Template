@@ -103,7 +103,7 @@ body {
 #heroImg {
   height: 300px;
   width: 50%;
-  background-image: url(/assets/hero-image.jpg);
+  background-image: url("./assets/hero-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -290,7 +290,7 @@ body {
 #prjImg {
   height: 300px;
   width: 100%;
-  background-image: url(/assets/hero-image.jpg);
+  background-image: url("./assets/hero-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
