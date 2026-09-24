@@ -5,10 +5,6 @@
   font-family: "Arimo", sans-serif;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 #navbar {
   min-height: 50px;
   width: 100%;
@@ -45,11 +41,33 @@ body {
 }
 
 #links a {
+  position: relative;
   color: #fff;
   text-decoration: none;
   font-size: 10px;
   font-weight: 600;
   white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+#links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #67bdb0;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+#links a:hover {
+  color: #67bdb0;
+}
+
+#links a:hover::after {
+  width: 100%;
 }
 
 #links a:nth-child(2) i {
@@ -57,13 +75,52 @@ body {
   transform: translateY(-3px);
 }
 
-#navLeftSide button {
+#navLeftSide a {
+  color: transparent;
+  text-decoration: none;
   padding: 10px 20px;
   font-weight: 600;
   font-size: 10px;
   border: 0;
   white-space: nowrap;
   cursor: pointer;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#navLeftSide a::before {
+  content: "ASK A QUESTION";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  background-color: #fff;
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(.76, 0, .24, 1);
+} 
+
+#navLeftSide a::after {
+  content: "ASK A QUESTION";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #67bdb0;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(.76, 0, .24, 1);
+}
+
+#navLeftSide a:hover::before {
+  transform: translateY(-100%);
+}
+
+#navLeftSide a:hover::after {
+  transform: translateY(0);
 }
 
 #menuButton {
@@ -73,6 +130,11 @@ body {
   border: 0;
   font-size: 22px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#menuButton:hover {
+  transform: scale(1.1);
 }
 
 #mobileQuestionButton {
@@ -140,6 +202,12 @@ body {
   font-size: 10px;
   border: 0;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#heroDescription button:hover {
+  background-color: #67bdb0;
+  transform: translateY(-1px);
 }
 
 #heroBottomSide {
@@ -158,6 +226,7 @@ body {
   align-items: center;
   gap: 30px;
   padding: 50px;
+  margin-bottom: 10px;
 }
 
 #para {
@@ -194,6 +263,11 @@ body {
   border: 0;
   white-space: nowrap;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#viewMore button:hover {
+  transform: scale(1.1);
 }
 
 #toolsAndAccessories {
@@ -238,6 +312,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.tools:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
 }
 
 .tools h2 {
@@ -281,6 +361,15 @@ body {
   font-size: 10px;
   border: 0;
   cursor: pointer;
+  transition:
+    all 0.35s ease,
+    transform 0.25s ease;
+}
+
+#prjLeftSide button:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
 }
 
 #prjRightSide {
@@ -318,7 +407,7 @@ body {
     gap: 20px;
   }
 
-  #navLeftSide button {
+  #navLeftSide a {
     padding: 9px 14px;
   }
 
@@ -360,8 +449,13 @@ body {
     font-size: 11px;
   }
 
+  #links a::after {
+    display: none;
+  }
+
   #links a:hover {
     background-color: #67bdb0;
+    color: #fff;
   }
 
   #navLeftSide {
